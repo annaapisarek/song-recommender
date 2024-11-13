@@ -1,7 +1,7 @@
 
 # Song Recommender
 
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-brightgreen)](https://annaapisarek-song-recommender-streamlit-app-l0x1lx.streamlit.app/) [![GitHub](https://img.shields.io/github/license/annaapisarek/song-recommender)](https://github.com/annaapisarek/song-recommender/blob/main/LICENSE)
+https://annaapisarek-song-recommender-streamlit-app-l0x1lx.streamlit.app/
 
 This project is a song recommendation app built with Python and Streamlit, designed to provide song suggestions based on user preferences. 
 
