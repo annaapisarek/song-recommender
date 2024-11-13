@@ -9,7 +9,7 @@ This project is a song recommendation app built with Python and Streamlit, desig
 
 - **Clustering-Based Recommendations**: Utilizes K-Means clustering to group songs into clusters, providing recommendations from similar clusters.
 - **Genre-Based Recommendations**: Provides recommendations of songs in the similar genre.
-- - **Genre-Based Recommendations**: Provides recommendations of songs in the similar popularity range.
+- **Popularity-Based Recommendations**: Provides recommendations of songs in the similar popularity range.
 - **Interactive UI**: Built with Streamlit for a simple, intuitive user experience.
 
 ## Methodology
