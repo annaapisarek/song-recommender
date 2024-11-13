@@ -39,7 +39,7 @@ def get_recommendations(df, selected_song):
 
 # Function to display song details
 def display_song_details(song_details):
-    st.write(f'🎵Title: {song_details["title"]} ')
+    st.markdown(f"🎵'{song_details['title']}' ")
     st.write(f"👤Artist: {song_details['artist']}")
     st.write(f"🎨Genre: {song_details['final genre']}")
     st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{song_details['track_id']})")
@@ -51,7 +51,7 @@ def display_recommendations(cluster_recs, genre_recs, popularity_recs):
     if not cluster_recs.empty:
         st.subheader("Similar Song:")
         for _, rec in cluster_recs.iterrows():
-            st.write(f'🎵Title: {rec["title"]} ')
+            st.markdown(f"🎵'{rec['title']}' ")
             st.write(f"👤Artist: {rec['artist']}")
             st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{rec['track_id']})")
             st.write("***")
@@ -59,9 +59,9 @@ def display_recommendations(cluster_recs, genre_recs, popularity_recs):
         st.write("No songs found in the same cluster.")
 
     if not genre_recs.empty:
-        st.subheader("Song in the same Genre:")
+        st.subheader("Song in a similar Genre:")
         for _, rec in genre_recs.iterrows():
-            st.write(f'🎵Title: {rec["title"]} ')
+            st.markdown(f"🎵'{rec['title']}' ")
             st.write(f"👤Artist: {rec['artist']}")
             st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{rec['track_id']})")
             st.write("***")
@@ -71,7 +71,7 @@ def display_recommendations(cluster_recs, genre_recs, popularity_recs):
     if not popularity_recs.empty:
         st.subheader("Similarly Popular Song:")
         for _, rec in popularity_recs.iterrows():
-            st.write(f'🎵Title: {rec["title"]} ')
+            st.markdown(f"🎵'{rec['title']}' ")
             st.write(f"👤Artist: {rec['artist']}")
             st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{rec['track_id']})")
             st.write("***")
@@ -80,14 +80,14 @@ def display_recommendations(cluster_recs, genre_recs, popularity_recs):
 
 # Main function
 def main():
-    st.title("Song Recommender")
+    st.title("🎶 Song Recommender")
 
     # Select method for choosing a song
     selection_method = st.radio("How would you like to select a song?", ["Choose from list", "Search by title/artist", "Random song"])
     
     selected_song = None
     if selection_method == "Choose from list":
-        selected_song = st.selectbox("Choose a song title from the list:", df['title'].tolist())
+        selected_song = st.selectbox("Choose a song from the list:", df['title'].tolist())
     elif selection_method == "Search by title/artist":
         search_term = st.text_input("Enter search term:")
         search_by = st.radio("Search by:", ["Title", "Artist"])
