@@ -57,9 +57,10 @@ def display_recommendations(cluster_recs, genre_recs, popularity_recs):
             st.write("***")
     else:
         st.write("No songs found in the same cluster.")
+        st.write("***")
 
     if not genre_recs.empty:
-        st.subheader("Song in a similar Genre:")
+        st.subheader("Song in a Similar Genre:")
         for _, rec in genre_recs.iterrows():
             st.markdown(f"🎵'{rec['title']}' ")
             st.write(f"👤Artist: {rec['artist']}")
@@ -67,6 +68,7 @@ def display_recommendations(cluster_recs, genre_recs, popularity_recs):
             st.write("***")
     else:
         st.write("No songs found in the same genre.")
+        st.write("***")
 
     if not popularity_recs.empty:
         st.subheader("Similarly Popular Song:")
@@ -77,6 +79,7 @@ def display_recommendations(cluster_recs, genre_recs, popularity_recs):
             st.write("***")
     else:
         st.write("No songs found with similar popularity.")
+        st.write("***")
 
 # Main function
 def main():
@@ -100,7 +103,7 @@ def main():
     else:  # Random song
         selected_song = random.choice(df['title'].tolist())
 
-    # If a song is selected, display details and recommendations
+    # When a song is selected, display details and recommendations
     if selected_song:
         song_details = df[df['title'] == selected_song]
         if not song_details.empty:
