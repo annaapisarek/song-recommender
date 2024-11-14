@@ -17,7 +17,7 @@ This project is a song recommendation app built with Python and Streamlit, desig
 The recommendation system is based on K-Means clustering with the following setup:
 
 - **Spotify Data**: 5,000 popular songs from the Spotify API with detailed acoustic attributes, including energy, danceability, tempo, and genre.
-- **Number of Clusters**: 4
+- **Number of Clusters**: 5
 - **Clustering Model**: KMeans with `k-means++` initialization and `random_state=42`
   
 Songs were clustered based on various acoustic features and genres, enabling the app to suggest similar songs from the same cluster.
