@@ -12,7 +12,7 @@ def search_songs(df, search_term, search_by='title'):
     else:
         return df[df['artist'].str.contains(search_term, case=False)]
 
-# Function to get 3 song recommendations based on cluster, popularity, genre
+# Function to get a song recommendations based on cluster, popularity, genre
 def get_recommendations(df, selected_song):
     song_details = df[df['title'] == selected_song]
     if not song_details.empty:
