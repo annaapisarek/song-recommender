@@ -22,5 +22,6 @@ The recommendation system is based on K-Means clustering with the following setu
   
 Songs were clustered based on various acoustic features and genres, enabling the app to suggest similar songs from the same cluster.
 
+## More details
 
-
+https://docs.google.com/presentation/d/1mFU5HXllsNJHqzC5fsKceKfH1t-uTa2gDaj76bKh66o/edit?usp=sharing
