@@ -44,45 +44,39 @@ def display_song_details(song_details):
     st.write(f"🎨 Genre: {song_details['final genre']}")
     st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{song_details['track_id']})")
 
-# Function to display a single recommendation
-def display_single_recommendation(rec):
-    st.markdown(f"🎵 '{rec['title']}' ")
-    st.write(f"👤 Artist: {rec['artist']}")
-    st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{rec['track_id']})")
-    st.write("***")
-
 # Function to display recommendations
 def display_recommendations(cluster_recs, genre_recs, popularity_recs):
     st.header("Recommendations")
 
-    # Create two columns for the first two recommendations
-    col1, col2 = st.columns(2)
-
-    # Display Similar Song in first column
-    with col1:
+    if not cluster_recs.empty:
         st.subheader("Similar Song:")
-        if not cluster_recs.empty:
-            for _, rec in cluster_recs.iterrows():
-                display_single_recommendation(rec)
-        else:
-            st.write("No songs found in the same cluster.")
+        for _, rec in cluster_recs.iterrows():
+            st.markdown(f"🎵 '{rec['title']}' ")
+            st.write(f"👤 Artist: {rec['artist']}")
+            st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{rec['track_id']})")
             st.write("***")
+    else:
+        st.write("No songs found in the same cluster.")
+        st.write("***")
 
-    # Display Similar Genre in second column
-    with col2:
+    if not genre_recs.empty:
         st.subheader("Song in a Similar Genre:")
-        if not genre_recs.empty:
-            for _, rec in genre_recs.iterrows():
-                display_single_recommendation(rec)
-        else:
-            st.write("No songs found in the same genre.")
+        for _, rec in genre_recs.iterrows():
+            st.markdown(f"🎵 '{rec['title']}' ")
+            st.write(f"👤 Artist: {rec['artist']}")
+            st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{rec['track_id']})")
             st.write("***")
+    else:
+        st.write("No songs found in the same genre.")
+        st.write("***")
 
-    # Display Similarly Popular Song below
-    st.subheader("Similarly Popular Song:")
     if not popularity_recs.empty:
+        st.subheader("Similarly Popular Song:")
         for _, rec in popularity_recs.iterrows():
-            display_single_recommendation(rec)
+            st.markdown(f"🎵 '{rec['title']}' ")
+            st.write(f"👤 Artist: {rec['artist']}")
+            st.markdown(f"[🔗 Listen on Spotify](https://open.spotify.com/track/{rec['track_id']})")
+            st.write("***")
     else:
         st.write("No songs found with similar popularity.")
         st.write("***")
