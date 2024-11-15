@@ -18,7 +18,7 @@ The recommendation system is based on K-Means clustering with the following setu
 
 - **Spotify Data**: 5,000 popular songs from the Spotify API with detailed acoustic attributes, including energy, danceability, tempo, and genre.
 - **Number of Clusters**: 4
-- **Clustering Model**: KMeans with `k-means++` initialization and `random_state=42`
+- **Clustering Model**: KMeans with PCA.
   
 Songs were clustered based on various acoustic features and genres, enabling the app to suggest similar songs from the same cluster.
 
